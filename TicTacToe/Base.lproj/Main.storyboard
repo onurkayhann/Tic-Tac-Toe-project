@@ -130,6 +130,21 @@
                             <constraint firstItem="Kn6-Q5-C7P" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Zib-ct-6Az"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="circleSymbol" destination="P4c-QF-6Tf" id="xj0-WA-HYJ"/>
+                        <outlet property="playerOneScore" destination="qJF-k0-1sz" id="xal-9d-lHW"/>
+                        <outlet property="playerTwoScore" destination="uUl-cM-oBF" id="bAH-QC-wCD"/>
+                        <outlet property="squareEight" destination="Hwj-Xh-MFB" id="ihu-cS-vRx"/>
+                        <outlet property="squareFive" destination="Hwj-Xh-MFB" id="Pj0-fB-2gU"/>
+                        <outlet property="squareFour" destination="l8K-69-oZD" id="dYe-qG-KqG"/>
+                        <outlet property="squareNine" destination="EaJ-SP-hE8" id="ris-hY-bOC"/>
+                        <outlet property="squareOne" destination="OSh-5c-cFM" id="e6W-Dt-85Y"/>
+                        <outlet property="squareSeven" destination="MrV-Rx-F05" id="h2C-N5-876"/>
+                        <outlet property="squareSix" destination="Ek8-tO-iTH" id="8Xb-V1-yCU"/>
+                        <outlet property="squareThree" destination="8KO-ft-jnQ" id="5Ch-FK-i4X"/>
+                        <outlet property="squareTwo" destination="Hwj-Xh-MFB" id="tti-mA-GPE"/>
+                        <outlet property="xSymbol" destination="Zuh-yo-Mrh" id="ujA-84-vn5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
