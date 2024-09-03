@@ -56,6 +56,9 @@
 		48C9EA6D2C870012008E9A76 /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				48C9EA822C8702C6008E9A76 /* Model */,
+				48C9EA832C8702DA008E9A76 /* View */,
+				48C9EA842C8702E7008E9A76 /* Controller */,
 				48C9EA6E2C870012008E9A76 /* AppDelegate.swift */,
 				48C9EA702C870012008E9A76 /* SceneDelegate.swift */,
 				48C9EA722C870012008E9A76 /* ViewController.swift */,
@@ -65,6 +68,27 @@
 				48C9EA7C2C870012008E9A76 /* Info.plist */,
 			);
 			path = TicTacToe;
+			sourceTree = "<group>";
+		};
+		48C9EA822C8702C6008E9A76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		48C9EA832C8702DA008E9A76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		48C9EA842C8702E7008E9A76 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
