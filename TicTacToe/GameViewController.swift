@@ -36,8 +36,54 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+       
     }
-
-
+    
+    
+    // Actions
+    
+    /*
+   
+    @IBAction func onDragX(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: self.view)
+        
+        xSymbol.center = CGPoint(x: xSymbol.center.x + translation.x, y: xSymbol.center.y + translation.y)
+        
+        sender.setTranslation(CGPoint.zero, in: self.view)
+    }
+    
+   
+    
+    
+   
+    @IBAction func onDragCircle(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: self.view)
+        
+        circleSymbol.center = CGPoint(x: circleSymbol.center.x + translation.x, y: circleSymbol.center.y + translation.y)
+        
+        sender.setTranslation(CGPoint.zero, in: self.view)
+    }
+     
+     */
+    
+    @IBAction func onDragX(_ sender: UIPanGestureRecognizer) {
+        
+        let translation = sender.translation(in: self.view)
+        
+        xSymbol.center = CGPoint(x: xSymbol.center.x + translation.x, y: xSymbol.center.y + translation.y)
+        
+        sender.setTranslation(CGPoint.zero, in: self.view)
+    }
+    
+    @IBAction func onDragCircle(_ sender: UIPanGestureRecognizer) {
+        
+        let translation = sender.translation(in: self.view)
+        
+        circleSymbol.center = CGPoint(x: circleSymbol.center.x + translation.x, y: circleSymbol.center.y + translation.y)
+        
+        sender.setTranslation(CGPoint.zero, in: self.view)
+    }
+    
 }
 
