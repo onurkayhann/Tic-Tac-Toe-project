@@ -39,39 +39,39 @@ class GameViewController: UIViewController {
         xSymbolPosition = xSymbol.center
         circleSymbolPosition = circleSymbol.center
         
-        // Try to make this code in function later
-        for _ in 0..<5 {
-                let newXSymbol = UIImageView(image: xSymbol.image)
-                newXSymbol.frame = xSymbol.frame
-                newXSymbol.contentMode = .scaleAspectFit
-                newXSymbol.isHidden = false
-            newXSymbol.tintColor = .systemBlue
-                view.addSubview(newXSymbol)
-            }
-        
-        for _ in 0..<5 {
-                let newCircleSymbol = UIImageView(image: circleSymbol.image)
-            newCircleSymbol.frame = circleSymbol.frame
-            newCircleSymbol.contentMode = .scaleAspectFit
-            newCircleSymbol.isHidden = false
-            newCircleSymbol.tintColor = .systemRed
-                view.addSubview(newCircleSymbol)
-            }
-        
+        // create 5 x symbols and 5 circle symbols using my function
+        createMultipleSymbols(originalSymbol: xSymbol, count: 5, color: .systemBlue)
+        createMultipleSymbols(originalSymbol: circleSymbol, count: 5, color: .systemRed)
         
     }
     
+    // function to copy symbols
     func createMultipleSymbols(originalSymbol: UIImageView, count: Int, color: UIColor) {
         for _ in 0..<count {
             let newSymbol = UIImageView(image: originalSymbol.image)
-            newSymbol.frame = originalSymbol.frame
-            newSymbol.contentMode = .scaleAspectFit
-            newSymbol.isUserInteractionEnabled = true
-            newSymbol.tintColor = color
-            newSymbol.isHidden = false
-            view.addSubview(newSymbol)
+                   newSymbol.frame = originalSymbol.frame
+                   newSymbol.contentMode = .scaleAspectFit
+                   newSymbol.isUserInteractionEnabled = true
+                   newSymbol.tintColor = color
+                   newSymbol.isHidden = false
+                   view.addSubview(newSymbol)
+                   
+                   let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+                   newSymbol.addGestureRecognizer(panGesture)
         }
     }
+    
+    
+    // XSymbol
+    @objc func handlePan(_ sender: UIPanGestureRecognizer) {
+        guard let copiedSymbol = sender.view else { return }  // The dragged image view
+        let translation = sender.translation(in: self.view)
+        
+        copiedSymbol.center = CGPoint(x: copiedSymbol.center.x + translation.x, y: copiedSymbol.center.y + translation.y)
+        
+        sender.setTranslation(.zero, in: self.view)
+    }
+    
     
     
     // Actions
