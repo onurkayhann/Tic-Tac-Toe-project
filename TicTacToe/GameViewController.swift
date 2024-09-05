@@ -19,6 +19,7 @@ class GameViewController: UIViewController {
     // Outlet Collection - squares
     @IBOutlet var squares: [UIImageView]!
     
+    
     // Outlets - symbols
     @IBOutlet weak var xSymbol: UIImageView!
     @IBOutlet weak var circleSymbol: UIImageView!
@@ -34,7 +35,6 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         xSymbolPosition = xSymbol.center
         circleSymbolPosition = circleSymbol.center
@@ -42,6 +42,10 @@ class GameViewController: UIViewController {
         // create 5 x symbols and 5 circle symbols using my function
         createMultipleSymbols(originalSymbol: xSymbol, count: 5, color: .systemBlue)
         createMultipleSymbols(originalSymbol: circleSymbol, count: 5, color: .systemRed)
+        
+        for (index, square) in squares.enumerated() {
+            print("Square at index \(index): \(square)")
+        }
         
     }
     
@@ -62,9 +66,11 @@ class GameViewController: UIViewController {
     }
     
     
-    // XSymbol
+    // Copied symbols get pan gesture
     @objc func handlePan(_ sender: UIPanGestureRecognizer) {
-        guard let copiedSymbol = sender.view else { return }  // The dragged image view
+        
+        guard let copiedSymbol = sender.view else { return }
+        
         let translation = sender.translation(in: self.view)
         
         copiedSymbol.center = CGPoint(x: copiedSymbol.center.x + translation.x, y: copiedSymbol.center.y + translation.y)
