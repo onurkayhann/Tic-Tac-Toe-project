@@ -79,7 +79,7 @@ class GameViewController: UIViewController {
                     square.image = xSymbol.image
                     square.tintColor = xSymbol.tintColor
                 
-                    makeMove(at: index)
+                    startGame(at: index)
                     print(gameArray)
                     
             
@@ -116,7 +116,7 @@ class GameViewController: UIViewController {
                     square.image = circleSymbol.image
                     square.tintColor = circleSymbol.tintColor
                     
-                    makeMove(at: index)
+                    startGame(at: index)
                     
                     print(gameArray)
                 }
@@ -127,7 +127,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    func makeMove(at index: Int) {
+    func startGame(at index: Int) {
         
         if gameArray[index] == 0 {
             
