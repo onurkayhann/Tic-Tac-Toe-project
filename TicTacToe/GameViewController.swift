@@ -65,7 +65,7 @@ class GameViewController: UIViewController {
         
         sender.setTranslation(CGPoint.zero, in: self.view)
         
-        if sender.state == .ended /* && currentPlayer */ {
+        if sender.state == .ended {
             
             for (index, square) in squares.enumerated() {
                 
@@ -74,7 +74,7 @@ class GameViewController: UIViewController {
                 let squareFrameInSuperView = square.convert(square.bounds, to: self.view)
                 let xSymbolFrameInSuperView = xSymbol.convert(xSymbol.bounds, to: self.view)
                 
-                if squareFrameInSuperView.contains(xSymbolFrameInSuperView) {
+                if squareFrameInSuperView.contains(xSymbolFrameInSuperView) && currentPlayer {
                     
                     square.image = xSymbol.image
                     square.tintColor = xSymbol.tintColor
@@ -103,7 +103,7 @@ class GameViewController: UIViewController {
         
         sender.setTranslation(CGPoint.zero, in: self.view)
         
-        if sender.state == .ended /* && !currentPlayer */ {
+        if sender.state == .ended {
             
             for (index, square) in squares.enumerated() {
                 
@@ -111,7 +111,7 @@ class GameViewController: UIViewController {
                 let squareFrameInSuperView = square.convert(square.bounds, to: self.view)
                 let circleSymbolFrameInSuperView = circleSymbol.convert(circleSymbol.bounds, to: self.view)
                 
-                if squareFrameInSuperView.contains(circleSymbolFrameInSuperView) {
+                if squareFrameInSuperView.contains(circleSymbolFrameInSuperView) && !currentPlayer {
                     
                     square.image = circleSymbol.image
                     square.tintColor = circleSymbol.tintColor
