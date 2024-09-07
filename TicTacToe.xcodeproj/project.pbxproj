@@ -63,8 +63,6 @@
 				48C9EA842C8702E7008E9A76 /* Controller */,
 				48C9EA6E2C870012008E9A76 /* AppDelegate.swift */,
 				48C9EA702C870012008E9A76 /* SceneDelegate.swift */,
-				48C9EA722C870012008E9A76 /* GameViewController.swift */,
-				48C9EA742C870012008E9A76 /* Main.storyboard */,
 				48C9EA772C870012008E9A76 /* Assets.xcassets */,
 				48C9EA792C870012008E9A76 /* LaunchScreen.storyboard */,
 				48C9EA7C2C870012008E9A76 /* Info.plist */,
@@ -83,6 +81,7 @@
 		48C9EA832C8702DA008E9A76 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				48C9EA742C870012008E9A76 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,6 +89,7 @@
 		48C9EA842C8702E7008E9A76 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				48C9EA722C870012008E9A76 /* GameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

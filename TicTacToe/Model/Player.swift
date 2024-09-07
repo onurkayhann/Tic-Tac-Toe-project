@@ -10,5 +10,4 @@ import Foundation
 struct Player {
     var username: String
     var totalScore: Int
-    var move: Int
 }
