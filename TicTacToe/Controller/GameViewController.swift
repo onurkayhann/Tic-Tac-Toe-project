@@ -125,7 +125,6 @@ class GameViewController: UIViewController {
 
 /*
     MARK: TODOS!!
-    - add conditions for the winner
     - navigation to WinnerViewController/LoserViewController or exit to MainMenuController
     - make score unique for each player
     - simulate computer moves
