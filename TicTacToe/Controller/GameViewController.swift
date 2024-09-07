@@ -9,9 +9,6 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    // Initial value for the Tic Tac Toe board
-    var gameArray: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    
     // Outlet Collection - squares
     @IBOutlet var squares: [UIImageView]!
     
@@ -23,12 +20,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var playerOneScore: UILabel!
     @IBOutlet weak var playerTwoScore: UILabel!
     
-    // Players
-    let PLAYER_ONE = 1
-    let PLAYER_TWO = 2
-    
-    var currentPlayer = true
-    
+    // Instance of the game logic
+    var game = TicTacToe()
+        
     var xSymbolPosition: CGPoint = CGPoint.zero
     var circleSymbolPosition: CGPoint = CGPoint.zero
     
@@ -74,13 +68,13 @@ class GameViewController: UIViewController {
                 let squareFrameInSuperView = square.convert(square.bounds, to: self.view)
                 let xSymbolFrameInSuperView = xSymbol.convert(xSymbol.bounds, to: self.view)
                 
-                if squareFrameInSuperView.contains(xSymbolFrameInSuperView) && currentPlayer && square.image != circleSymbol.image {
+                if squareFrameInSuperView.contains(xSymbolFrameInSuperView) && game.currentPlayer && square.image != circleSymbol.image {
                     
                     square.image = xSymbol.image
                     square.tintColor = xSymbol.tintColor
                 
-                    startGame(at: index)
-                    print(gameArray)
+                    game.startGame(at: index)
+                    print(game.gameArray)
                     
             
                     
@@ -111,14 +105,14 @@ class GameViewController: UIViewController {
                 let squareFrameInSuperView = square.convert(square.bounds, to: self.view)
                 let circleSymbolFrameInSuperView = circleSymbol.convert(circleSymbol.bounds, to: self.view)
                 
-                if squareFrameInSuperView.contains(circleSymbolFrameInSuperView) && !currentPlayer && square.image != xSymbol.image {
+                if squareFrameInSuperView.contains(circleSymbolFrameInSuperView) && !game.currentPlayer && square.image != xSymbol.image {
                     
                     square.image = circleSymbol.image
                     square.tintColor = circleSymbol.tintColor
                     
-                    startGame(at: index)
+                    game.startGame(at: index)
                     
-                    print(gameArray)
+                    print(game.gameArray)
                 }
                 
             }
@@ -126,31 +120,13 @@ class GameViewController: UIViewController {
             circleSymbol.center = circleSymbolPosition
         }
     }
-    
-    func startGame(at index: Int) {
-        
-        if gameArray[index] == 0 {
-            
-            if currentPlayer {
-                gameArray[index] = PLAYER_ONE
-                
-            } else {
-                gameArray[index] = PLAYER_TWO
-            }
-            
-            currentPlayer.toggle()
-            
-        }
-        
-    }
 
 }
 
 /*
     MARK: TODOS!!
-    - separate game logic from viewcontroller and add it to Model
     - add conditions for the winner
-    - navigation to winnerviewcontroller or exit to main menu viewcontroller
+    - navigation to WinnerViewController/LoserViewController or exit to MainMenuController
     - make score unique for each player
     - simulate computer moves
 */
