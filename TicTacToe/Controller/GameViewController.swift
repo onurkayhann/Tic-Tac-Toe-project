@@ -74,7 +74,7 @@ class GameViewController: UIViewController {
                 let squareFrameInSuperView = square.convert(square.bounds, to: self.view)
                 let xSymbolFrameInSuperView = xSymbol.convert(xSymbol.bounds, to: self.view)
                 
-                if squareFrameInSuperView.contains(xSymbolFrameInSuperView) && currentPlayer {
+                if squareFrameInSuperView.contains(xSymbolFrameInSuperView) && currentPlayer && square.image != circleSymbol.image {
                     
                     square.image = xSymbol.image
                     square.tintColor = xSymbol.tintColor
@@ -111,7 +111,7 @@ class GameViewController: UIViewController {
                 let squareFrameInSuperView = square.convert(square.bounds, to: self.view)
                 let circleSymbolFrameInSuperView = circleSymbol.convert(circleSymbol.bounds, to: self.view)
                 
-                if squareFrameInSuperView.contains(circleSymbolFrameInSuperView) && !currentPlayer {
+                if squareFrameInSuperView.contains(circleSymbolFrameInSuperView) && !currentPlayer && square.image != xSymbol.image {
                     
                     square.image = circleSymbol.image
                     square.tintColor = circleSymbol.tintColor
@@ -146,3 +146,11 @@ class GameViewController: UIViewController {
 
 }
 
+/*
+    MARK: TODOS!!
+    - separate game logic from viewcontroller and add it to Model
+    - add conditions for the winner
+    - navigation to winnerviewcontroller or exit to main menu viewcontroller
+    - make score unique for each player
+    - simulate computer moves
+*/
