@@ -22,6 +22,7 @@ class GameViewController: UIViewController {
     
     // Instance of the game logic
     var game = TicTacToe()
+    
         
     var xSymbolPosition: CGPoint = CGPoint.zero
     var circleSymbolPosition: CGPoint = CGPoint.zero
@@ -33,19 +34,6 @@ class GameViewController: UIViewController {
         
         xSymbolPosition = xSymbol.center
         circleSymbolPosition = circleSymbol.center
-        
-        /*
-        
-        for (index, square) in squares.enumerated() {
-            
-            square.tag = index
-            print("Square at index \(index): \(square.tag)")
-            
-        }
-        
-         */
-        
-        
         
     }
     
@@ -128,4 +116,7 @@ class GameViewController: UIViewController {
     - navigation to WinnerViewController/LoserViewController or exit to MainMenuController
     - make score unique for each player
     - simulate computer moves
+    - make if-statements in my checkWinner much shorter
+    - reset tic-tac-toe
+    - something similar like Toast in android to announce winner or tie
 */

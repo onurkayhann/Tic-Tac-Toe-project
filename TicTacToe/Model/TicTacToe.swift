@@ -12,6 +12,8 @@ class TicTacToe {
     // Array for game
     var gameArray: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     
+    
+    
     // Players
     var PLAYER_ONE = 1
     var PLAYER_TWO = 2
