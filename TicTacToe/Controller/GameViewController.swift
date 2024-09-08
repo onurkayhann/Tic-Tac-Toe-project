@@ -107,11 +107,10 @@ class GameViewController: UIViewController {
                 }
                 
                 
-                
             }
             
             circleSymbol.center = circleSymbolPosition
-            
+                        
         }
         
         
