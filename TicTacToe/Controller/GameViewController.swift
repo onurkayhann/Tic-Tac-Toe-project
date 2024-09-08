@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
     
     // Instance of the game logic
     var game = TicTacToe()
-    
+        
         
     var xSymbolPosition: CGPoint = CGPoint.zero
     var circleSymbolPosition: CGPoint = CGPoint.zero
@@ -60,19 +60,21 @@ class GameViewController: UIViewController {
                     
                     square.image = xSymbol.image
                     square.tintColor = xSymbol.tintColor
+                    
                 
                     game.startGame(at: index)
                     print(game.gameArray)
                     
-            
-                    
+                                                            
                 }
+                
                 
             }
                 xSymbol.center = xSymbolPosition
             
         }
-                            
+        
+                                    
     }
     
     
@@ -101,14 +103,33 @@ class GameViewController: UIViewController {
                     game.startGame(at: index)
                     
                     print(game.gameArray)
+                                        
                 }
+                
+                
                 
             }
             
             circleSymbol.center = circleSymbolPosition
+            
         }
+        
+        
     }
-
+    
+    /*
+     
+     
+     
+    func gameMessage() {
+        
+        let alert = UIAlertController(title: "Game Over", message: "Player one wins", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+     
+     */
+    
 }
 
 /*
