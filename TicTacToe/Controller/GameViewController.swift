@@ -22,8 +22,8 @@ class GameViewController: UIViewController {
     
     // Instance of the game logic
     var game = TicTacToe()
-        
-        
+    
+    
     var xSymbolPosition: CGPoint = CGPoint.zero
     var circleSymbolPosition: CGPoint = CGPoint.zero
     
@@ -36,17 +36,17 @@ class GameViewController: UIViewController {
         circleSymbolPosition = circleSymbol.center
         
         game.onGameOver = { [weak self] resultMessage in
-                    self?.gameMessage(message: resultMessage)
-                }
+            self?.gameMessage(message: resultMessage)
+        }
         
     }
     
     func gameMessage(message: String) {
-            let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-     
+        let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     
     // Actions
@@ -72,20 +72,20 @@ class GameViewController: UIViewController {
                     square.image = xSymbol.image
                     square.tintColor = xSymbol.tintColor
                     
-                
+                    
                     game.startGame(at: index)
                     print(game.gameArray)
                     
-                                                            
+                    
                 }
                 
                 
             }
-                xSymbol.center = xSymbolPosition
+            xSymbol.center = xSymbolPosition
             
         }
         
-                                    
+        
     }
     
     
@@ -114,29 +114,28 @@ class GameViewController: UIViewController {
                     game.startGame(at: index)
                     
                     print(game.gameArray)
-                                        
-                                        
+                    
+                    
                 }
                 
                 
             }
             
             circleSymbol.center = circleSymbolPosition
-                        
+            
         }
         
         
     }
-
+    
     
 }
 
 /*
-    MARK: TODOS!!
-    - navigation to WinnerViewController/LoserViewController or exit to MainMenuController
-    - make score unique for each player
-    - simulate computer moves
-    - make if-statements in my checkWinner much shorter
-    - reset tic-tac-toe
-    - something similar like Toast in android to announce winner or tie
-*/
+ MARK: TODOS!!
+ - navigation to WinnerViewController/LoserViewController or exit to MainMenuController
+ - make score unique for each player
+ - simulate computer moves
+ - make if-statements in my checkWinner much shorter
+ - reset tic-tac-toe
+ */

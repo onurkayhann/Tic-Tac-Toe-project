@@ -11,7 +11,7 @@ class TicTacToe {
     
     // Array for game
     var gameArray: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-        
+    
     
     // Players
     var PLAYER_ONE = 1
@@ -22,8 +22,8 @@ class TicTacToe {
     
     // Closure
     var onGameOver: ((String) -> Void)?
-
-        
+    
+    
     func startGame(at index: Int) {
         
         if gameArray[index] == 0 {
@@ -34,10 +34,10 @@ class TicTacToe {
             
         }
         
-            checkWinner()
+        checkWinner()
     }
     
-
+    
     
     func checkWinner() {
         
@@ -137,7 +137,7 @@ class TicTacToe {
         
         
     }
-         
+    
     func resetGame() {
         gameArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     }
