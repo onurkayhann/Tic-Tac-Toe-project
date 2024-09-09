@@ -44,95 +44,78 @@ class TicTacToe {
         // Possibilites for player one to win horizontally:
         if (gameArray[0] == PLAYER_ONE && gameArray[1] == PLAYER_ONE && gameArray[2] == PLAYER_ONE) {
             onGameOver?("Player one wins by horizontal combination in horizontal row 1")
-            resetGame()
         }
         
         if (gameArray[3] == PLAYER_ONE && gameArray[4] == PLAYER_ONE && gameArray[5] == PLAYER_ONE) {
             onGameOver?("Player one wins by horizontal combination in horizontal row 2")
-            resetGame()
         }
         
         if (gameArray[6] == PLAYER_ONE && gameArray[7] == PLAYER_ONE && gameArray[8] == PLAYER_ONE) {
             onGameOver?("Player one wins by horizontal combination in horizontal row 3")
-            resetGame()
         }
         
         // Possibilites for player one to win vertically:
         if (gameArray[0] == PLAYER_ONE && gameArray[3] == PLAYER_ONE && gameArray[6] == PLAYER_ONE) {
             onGameOver?("Player one wins by vertical combination in row 1")
-            resetGame()
         }
         
         if (gameArray[1] == PLAYER_ONE && gameArray[4] == PLAYER_ONE && gameArray[7] == PLAYER_ONE) {
             onGameOver?("Player one wins by vertical combination in row 2")
-            resetGame()
         }
         
         if (gameArray[2] == PLAYER_ONE && gameArray[5] == PLAYER_ONE && gameArray[8] == PLAYER_ONE) {
             onGameOver?("Player one wins by vertical combination in row 3")
-            resetGame()
         }
         
         // Possibilites for player one to win dioganally:
         
         if (gameArray[0] == PLAYER_ONE && gameArray[4] == PLAYER_ONE && gameArray[8] == PLAYER_ONE) {
             onGameOver?("Player one wins by dioganal combination")
-            resetGame()
         }
         
         if (gameArray[2] == PLAYER_ONE && gameArray[4] == PLAYER_ONE && gameArray[6] == PLAYER_ONE) {
             onGameOver?("Player one wins by dioganal combination")
-            resetGame()
         }
         
         
         // Possibilites for player two to win horizontally:
         if (gameArray[0] == PLAYER_TWO && gameArray[1] == PLAYER_TWO && gameArray[2] == PLAYER_TWO) {
             onGameOver?("Player two wins by horizontal combination in horizontal row 1")
-            resetGame()
         }
         
         if (gameArray[3] == PLAYER_TWO && gameArray[4] == PLAYER_TWO && gameArray[5] == PLAYER_TWO) {
             onGameOver?("Player two wins by horizontal combination in horizontal row 2")
-            resetGame()
         }
         
         if (gameArray[6] == PLAYER_TWO && gameArray[7] == PLAYER_TWO && gameArray[8] == PLAYER_TWO) {
             onGameOver?("Player two wins by horizontal combination in horizontal row 3")
-            resetGame()
         }
         
         // Possibilites for player two to win vertically:
         if (gameArray[0] == PLAYER_TWO && gameArray[3] == PLAYER_TWO && gameArray[6] == PLAYER_TWO) {
             onGameOver?("Player two wins by vertical combination in row 1")
-            resetGame()
         }
         
         if (gameArray[1] == PLAYER_TWO && gameArray[4] == PLAYER_TWO && gameArray[7] == PLAYER_TWO) {
             onGameOver?("Player two wins by vertical combination in row 2")
-            resetGame()
         }
         
         if (gameArray[2] == PLAYER_TWO && gameArray[5] == PLAYER_TWO && gameArray[8] == PLAYER_TWO) {
             onGameOver?("Player two wins by vertical combination in row 3")
-            resetGame()
         }
         
         // Possibilites for player two to win dioganally:
         
         if (gameArray[0] == PLAYER_TWO && gameArray[4] == PLAYER_TWO && gameArray[8] == PLAYER_TWO) {
             onGameOver?("Player two wins by dioganal combination")
-            resetGame()
         }
         
         if (gameArray[2] == PLAYER_TWO && gameArray[4] == PLAYER_TWO && gameArray[6] == PLAYER_TWO) {
             onGameOver?("Player two wins by dioganal combination")
-            resetGame()
         }
         
         if (!gameArray.contains(0)) {
             onGameOver?("It's a tie!")
-            resetGame()
         }
         
         

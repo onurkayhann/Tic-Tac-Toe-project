@@ -39,12 +39,15 @@ class GameViewController: UIViewController {
             self?.gameMessage(message: resultMessage)
         }
         
+        
     }
     
     func gameMessage(message: String) {
         let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        
+        resetBoard()
     }
     
     
@@ -69,12 +72,13 @@ class GameViewController: UIViewController {
                 
                 if squareFrameInSuperView.contains(xSymbolFrameInSuperView) && game.currentPlayer && square.image != circleSymbol.image {
                     
-                    square.image = xSymbol.image
-                    square.tintColor = xSymbol.tintColor
+                    square.image = UIImage(systemName: "xmark")
+                    square.tintColor = UIColor.systemIndigo
                     
                     
                     game.startGame(at: index)
                     print(game.gameArray)
+                    
                     
                     
                 }
@@ -108,13 +112,13 @@ class GameViewController: UIViewController {
                 
                 if squareFrameInSuperView.contains(circleSymbolFrameInSuperView) && !game.currentPlayer && square.image != xSymbol.image {
                     
-                    square.image = circleSymbol.image
-                    square.tintColor = circleSymbol.tintColor
+                    square.image = UIImage(systemName: "circle")
+                    square.tintColor = UIColor.systemOrange
                     
                     game.startGame(at: index)
                     
                     print(game.gameArray)
-                    
+                                        
                     
                 }
                 
@@ -123,10 +127,24 @@ class GameViewController: UIViewController {
             
             circleSymbol.center = circleSymbolPosition
             
+            
         }
         
+    }
+    
+    func resetBoard() {
+        
+        for square in squares {
+            
+            square.image = UIImage(systemName: "square")
+            square.tintColor = .black
+            
+        }
+        
+        game.resetGame()
         
     }
+    
     
     
 }
@@ -138,4 +156,8 @@ class GameViewController: UIViewController {
  - simulate computer moves
  - make if-statements in my checkWinner much shorter
  - reset tic-tac-toe
+ 
+ 
+ square.image = UIImage(systemName: "circle")
+ square.tintColor = UIColor.systemOrange
  */
