@@ -35,7 +35,18 @@ class GameViewController: UIViewController {
         xSymbolPosition = xSymbol.center
         circleSymbolPosition = circleSymbol.center
         
+        game.onGameOver = { [weak self] resultMessage in
+                    self?.gameMessage(message: resultMessage)
+                }
+        
     }
+    
+    func gameMessage(message: String) {
+            let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+     
     
     
     // Actions
@@ -104,6 +115,7 @@ class GameViewController: UIViewController {
                     
                     print(game.gameArray)
                                         
+                                        
                 }
                 
                 
@@ -115,19 +127,7 @@ class GameViewController: UIViewController {
         
         
     }
-    
-    /*
-     
-     
-     
-    func gameMessage() {
-        
-        let alert = UIAlertController(title: "Game Over", message: "Player one wins", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-     
-     */
+
     
 }
 
