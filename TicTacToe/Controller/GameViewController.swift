@@ -118,7 +118,7 @@ class GameViewController: UIViewController {
                     game.startGame(at: index)
                     
                     print(game.gameArray)
-                                        
+                    
                     
                 }
                 
@@ -155,9 +155,12 @@ class GameViewController: UIViewController {
  - make score unique for each player
  - simulate computer moves
  - make if-statements in my checkWinner much shorter
- - reset tic-tac-toe
- 
- 
- square.image = UIImage(systemName: "circle")
- square.tintColor = UIColor.systemOrange
+ */
+
+
+/*
+ let something = {(name:String) -> Int in
+    print(name)
+    return 1
+ }
  */
