@@ -208,7 +208,4 @@ class GameViewController: UIViewController {
  - make onDragCircle and onDragX to a reusabel function
  
  - try to remove weak self, remove ? from self.
- 
- - eller blinkande label
- - eller opacity
  */
