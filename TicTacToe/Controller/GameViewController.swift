@@ -139,6 +139,9 @@ class GameViewController: UIViewController {
         
     }
     
+    /**
+            Function to reset board to its default value --> squares
+     */
     func resetBoard() {
         
         for square in squares {
@@ -153,7 +156,7 @@ class GameViewController: UIViewController {
     }
     
     /**
-            This function will outgray the disabled player, for the view purpose
+            This function will outgray the disabled player, for the view purpose. This function will also highlight current player by blinking animation
      */
     func highlightPlayerTurn() {
         if game.currentPlayer {
