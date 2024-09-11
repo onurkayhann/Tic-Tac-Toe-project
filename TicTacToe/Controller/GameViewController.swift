@@ -162,6 +162,16 @@ class GameViewController: UIViewController {
             
             playerTwoLabel.textColor = UIColor.systemGray3
             playerOneLabel.textColor = UIColor.systemIndigo
+            
+            UIView.animate(withDuration: 0.6,
+                              delay: 0.0,
+                              options: [.repeat, .autoreverse],
+                              animations: {
+                                  self.playerOneLabel.alpha = 0
+                              }, completion: nil)
+            
+            self.playerTwoLabel.layer.removeAllAnimations()
+            self.playerTwoLabel.alpha = 1
         }
         
         if !game.currentPlayer {
@@ -170,6 +180,16 @@ class GameViewController: UIViewController {
             
             playerTwoLabel.textColor = UIColor.systemOrange
             playerOneLabel.textColor = UIColor.systemGray3
+            
+            UIView.animate(withDuration: 0.6,
+                              delay: 0.0,
+                              options: [.repeat, .autoreverse],
+                              animations: {
+                                  self.playerTwoLabel.alpha = 0
+                              }, completion: nil)
+            
+            self.playerOneLabel.layer.removeAllAnimations()
+            self.playerOneLabel.alpha = 1
         }
         
         
@@ -189,9 +209,6 @@ class GameViewController: UIViewController {
  
  - try to remove weak self, remove ? from self.
  
- - gömma x:et och vice versa
  - eller blinkande label
  - eller opacity
- 
- - or use score: 0 as player turn
  */
