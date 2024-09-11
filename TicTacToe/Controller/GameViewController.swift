@@ -12,6 +12,10 @@ class GameViewController: UIViewController {
     // Outlet Collection - squares
     @IBOutlet var squares: [UIImageView]!
     
+    // Player labels
+    @IBOutlet weak var playerOneLabel: UILabel!
+    @IBOutlet weak var playerTwoLabel: UILabel!
+    
     // Outlets - symbols
     @IBOutlet weak var xSymbol: UIImageView!
     @IBOutlet weak var circleSymbol: UIImageView!
@@ -35,6 +39,8 @@ class GameViewController: UIViewController {
         xSymbolPosition = xSymbol.center
         circleSymbolPosition = circleSymbol.center
         
+        highlightPlayerTurn()
+        
         game.onGameOver = { [weak self] resultMessage in
             self?.gameMessage(message: resultMessage)
         }
@@ -48,6 +54,8 @@ class GameViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         
         resetBoard()
+        
+        // game.startgame(at: index) ?
     }
     
     
@@ -62,29 +70,27 @@ class GameViewController: UIViewController {
         sender.setTranslation(CGPoint.zero, in: self.view)
         
         if sender.state == .ended {
-            
+                        
             for (index, square) in squares.enumerated() {
-                
-                
                 
                 let squareFrameInSuperView = square.convert(square.bounds, to: self.view)
                 let xSymbolFrameInSuperView = xSymbol.convert(xSymbol.bounds, to: self.view)
                 
+                
                 if squareFrameInSuperView.contains(xSymbolFrameInSuperView) && game.currentPlayer && square.image != circleSymbol.image {
-                    
                     square.image = UIImage(systemName: "xmark")
                     square.tintColor = UIColor.systemIndigo
-                    
-                    
+                                        
                     game.startGame(at: index)
+                    highlightPlayerTurn()
                     print(game.gameArray)
-                    
-                    
                     
                 }
                 
                 
+                                
             }
+            
             xSymbol.center = xSymbolPosition
             
         }
@@ -96,39 +102,40 @@ class GameViewController: UIViewController {
     
     @IBAction func onDragCircle(_ sender: UIPanGestureRecognizer) {
         
+        
         let translation = sender.translation(in: self.view)
         
         circleSymbol.center = CGPoint(x: circleSymbol.center.x + translation.x, y: circleSymbol.center.y + translation.y)
         
         sender.setTranslation(CGPoint.zero, in: self.view)
+                
         
         if sender.state == .ended {
-            
+                        
             for (index, square) in squares.enumerated() {
                 
                 
                 let squareFrameInSuperView = square.convert(square.bounds, to: self.view)
                 let circleSymbolFrameInSuperView = circleSymbol.convert(circleSymbol.bounds, to: self.view)
                 
+                
                 if squareFrameInSuperView.contains(circleSymbolFrameInSuperView) && !game.currentPlayer && square.image != xSymbol.image {
-                    
+
                     square.image = UIImage(systemName: "circle")
                     square.tintColor = UIColor.systemOrange
                     
                     game.startGame(at: index)
-                    
+                    highlightPlayerTurn()
                     print(game.gameArray)
-                    
                     
                 }
                 
-                
+
             }
             
             circleSymbol.center = circleSymbolPosition
-            
-            
         }
+        
         
     }
     
@@ -145,6 +152,29 @@ class GameViewController: UIViewController {
         
     }
     
+    /**
+            This function will outgray the disabled player, for the view purpose
+     */
+    func highlightPlayerTurn() {
+        if game.currentPlayer {
+            circleSymbol.tintColor = UIColor.systemGray3
+            xSymbol.tintColor = UIColor.systemIndigo
+            
+            playerTwoLabel.textColor = UIColor.systemGray3
+            playerOneLabel.textColor = UIColor.systemIndigo
+        }
+        
+        if !game.currentPlayer {
+            xSymbol.tintColor = UIColor.systemGray3
+            circleSymbol.tintColor = UIColor.systemOrange
+            
+            playerTwoLabel.textColor = UIColor.systemOrange
+            playerOneLabel.textColor = UIColor.systemGray3
+        }
+        
+        
+    }
+ 
     
     
 }
@@ -155,12 +185,13 @@ class GameViewController: UIViewController {
  - make score unique for each player
  - simulate computer moves
  - make if-statements in my checkWinner much shorter
- */
-
-
-/*
- let something = {(name:String) -> Int in
-    print(name)
-    return 1
- }
+ - make onDragCircle and onDragX to a reusabel function
+ 
+ - try to remove weak self, remove ? from self.
+ 
+ - gömma x:et och vice versa
+ - eller blinkande label
+ - eller opacity
+ 
+ - or use score: 0 as player turn
  */

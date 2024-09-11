@@ -128,3 +128,9 @@ class TicTacToe {
     
     
 }
+
+
+/*
+ - mayb remove ? from onGameOver as well
+ - dictionary for username and highscore to print it in the highscore page
+ */
