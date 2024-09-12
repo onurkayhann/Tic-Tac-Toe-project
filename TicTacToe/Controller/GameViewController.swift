@@ -98,7 +98,7 @@ class GameViewController: UIViewController {
                 
                 if squareFrameInSuperView.contains(xSymbolFrameInSuperView) && game.currentPlayer && square.image != circleSymbol.image {
                     square.image = UIImage(systemName: "xmark")
-                    square.tintColor = UIColor.systemIndigo
+                    square.tintColor = UIColor.greenCustom
                                         
                     game.startGame(at: index)
                     highlightPlayerTurn()
@@ -140,7 +140,7 @@ class GameViewController: UIViewController {
                 if squareFrameInSuperView.contains(circleSymbolFrameInSuperView) && !game.currentPlayer && square.image != xSymbol.image {
 
                     square.image = UIImage(systemName: "circle")
-                    square.tintColor = UIColor.systemOrange
+                    square.tintColor = UIColor.grayCustom
                     
                     game.startGame(at: index)
                     highlightPlayerTurn()
@@ -184,10 +184,10 @@ class GameViewController: UIViewController {
             if self.game.currentPlayer {
                 // Player One's turn
                 self.circleSymbol.tintColor = UIColor.systemGray3
-                self.xSymbol.tintColor = UIColor.systemIndigo
+                self.xSymbol.tintColor = UIColor.greenCustom
                 
                 self.playerTwoLabel.textColor = UIColor.systemGray3
-                self.playerOneLabel.textColor = UIColor.systemIndigo
+                self.playerOneLabel.textColor = UIColor.greenCustom
                 
                 self.playerOneLabel.alpha = 1
                 self.playerTwoLabel.alpha = 1
@@ -206,9 +206,9 @@ class GameViewController: UIViewController {
                 
                 // Player Two's turn
                 self.xSymbol.tintColor = UIColor.systemGray3
-                self.circleSymbol.tintColor = UIColor.systemOrange
+                self.circleSymbol.tintColor = UIColor.grayCustom
                 
-                self.playerTwoLabel.textColor = UIColor.systemOrange
+                self.playerTwoLabel.textColor = UIColor.grayCustom
                 self.playerOneLabel.textColor = UIColor.systemGray3
                 
                 self.playerOneLabel.alpha = 1
