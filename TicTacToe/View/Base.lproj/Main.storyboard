@@ -229,7 +229,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="153" height="48.666666666666664"/>
                                                 <color key="tintColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.7987375827814569" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Start Game"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Start Game">
+                                                    <color key="baseBackgroundColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="BYZ-38-t0r" kind="show" id="jQW-RU-cSX"/>
                                                 </connections>
@@ -238,13 +240,17 @@
                                                 <rect key="frame" x="0.0" y="68.666666666666629" width="153" height="48.666666666666657"/>
                                                 <color key="tintColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Play Computer"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Play Computer">
+                                                    <color key="baseBackgroundColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbM-uL-jJM">
                                                 <rect key="frame" x="0.0" y="137.33333333333337" width="153" height="48.666666666666657"/>
                                                 <color key="tintColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="About Game"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="About Game">
+                                                    <color key="baseBackgroundColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
                                             </button>
                                         </subviews>
                                     </stackView>
