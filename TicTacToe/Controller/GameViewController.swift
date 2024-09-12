@@ -33,6 +33,9 @@ class GameViewController: UIViewController {
     var xSymbolPosition: CGPoint = CGPoint.zero
     var circleSymbolPosition: CGPoint = CGPoint.zero
     
+    // Navigation variables
+    var segueToMainMenu = "segueToMainMenu"
+    
     
     
     override func viewDidLoad() {
@@ -40,7 +43,7 @@ class GameViewController: UIViewController {
         
         xSymbolPosition = xSymbol.center
         circleSymbolPosition = circleSymbol.center
-        
+                
         highlightPlayerTurn()
         
         game.onGameOver = { [weak self] resultMessage in
@@ -51,19 +54,27 @@ class GameViewController: UIViewController {
     }
     
     func gameMessage(message: String) {
+        // Create the alert
         let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: { action in
+            self.resetBoard()
+            self.highlightPlayerTurn()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Main Menu", style: .default, handler: { action in
+            self.performSegue(withIdentifier: self.segueToMainMenu, sender: self)
+        }))
+        
         self.present(alert, animated: true, completion: nil)
         
         if message.contains("Player 1 wins") {
-                valuePlayerOne += 1
-                playerOneScore.text = "Score: \(valuePlayerOne)"
-            } else if message.contains("Player 2 wins") {
-                valuePlayerTwo += 1
-                playerTwoScore.text = "Score: \(valuePlayerTwo)"
-            }
-        
-        resetBoard()
+            valuePlayerOne += 1
+            playerOneScore.text = "Score: \(valuePlayerOne)"
+        } else if message.contains("Player 2 wins") {
+            valuePlayerTwo += 1
+            playerTwoScore.text = "Score: \(valuePlayerTwo)"
+        }
     }
     
     
@@ -167,43 +178,53 @@ class GameViewController: UIViewController {
             This function will outgray the disabled player, for the view purpose. This function will also highlight current player by blinking animation
      */
     func highlightPlayerTurn() {
-        if game.currentPlayer {
-            circleSymbol.tintColor = UIColor.systemGray3
-            xSymbol.tintColor = UIColor.systemIndigo
+        // Adding the delay before executing the main logic
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             
-            playerTwoLabel.textColor = UIColor.systemGray3
-            playerOneLabel.textColor = UIColor.systemIndigo
-            
-            UIView.animate(withDuration: 0.6,
-                              delay: 0.0,
-                              options: [.repeat, .autoreverse],
-                              animations: {
-                                  self.playerOneLabel.alpha = 0
-                              }, completion: nil)
-            
-            self.playerTwoLabel.layer.removeAllAnimations()
-            self.playerTwoLabel.alpha = 1
+            if self.game.currentPlayer {
+                // Player One's turn
+                self.circleSymbol.tintColor = UIColor.systemGray3
+                self.xSymbol.tintColor = UIColor.systemIndigo
+                
+                self.playerTwoLabel.textColor = UIColor.systemGray3
+                self.playerOneLabel.textColor = UIColor.systemIndigo
+                
+                self.playerOneLabel.alpha = 1
+                self.playerTwoLabel.alpha = 1
+                
+                self.playerOneLabel.layer.removeAllAnimations()
+                self.playerTwoLabel.layer.removeAllAnimations()
+                
+                UIView.animate(withDuration: 0.6,
+                               delay: 0.0,
+                               options: [.repeat, .autoreverse],
+                               animations: {
+                                   self.playerOneLabel.alpha = 0
+                               }, completion: nil)
+                
+            } else {
+                
+                // Player Two's turn
+                self.xSymbol.tintColor = UIColor.systemGray3
+                self.circleSymbol.tintColor = UIColor.systemOrange
+                
+                self.playerTwoLabel.textColor = UIColor.systemOrange
+                self.playerOneLabel.textColor = UIColor.systemGray3
+                
+                self.playerOneLabel.alpha = 1
+                self.playerTwoLabel.alpha = 1
+                
+                self.playerOneLabel.layer.removeAllAnimations()
+                self.playerTwoLabel.layer.removeAllAnimations()
+                
+                UIView.animate(withDuration: 0.6,
+                               delay: 0.0,
+                               options: [.repeat, .autoreverse],
+                               animations: {
+                                   self.playerTwoLabel.alpha = 0
+                               }, completion: nil)
+            }
         }
-        
-        if !game.currentPlayer {
-            xSymbol.tintColor = UIColor.systemGray3
-            circleSymbol.tintColor = UIColor.systemOrange
-            
-            playerTwoLabel.textColor = UIColor.systemOrange
-            playerOneLabel.textColor = UIColor.systemGray3
-            
-            UIView.animate(withDuration: 0.6,
-                              delay: 0.0,
-                              options: [.repeat, .autoreverse],
-                              animations: {
-                                  self.playerTwoLabel.alpha = 0
-                              }, completion: nil)
-            
-            self.playerOneLabel.layer.removeAllAnimations()
-            self.playerOneLabel.alpha = 1
-        }
-        
-        
     }
  
     

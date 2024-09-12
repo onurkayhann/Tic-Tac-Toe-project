@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4800C7DD2C93059B00BC0397 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4800C7DC2C93059B00BC0397 /* MenuViewController.swift */; };
 		48C438A62C8CB43E00C830EE /* TicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C438A52C8CB43E00C830EE /* TicTacToe.swift */; };
 		48C9EA6F2C870012008E9A76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C9EA6E2C870012008E9A76 /* AppDelegate.swift */; };
 		48C9EA712C870012008E9A76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C9EA702C870012008E9A76 /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4800C7DC2C93059B00BC0397 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		48C438A52C8CB43E00C830EE /* TicTacToe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToe.swift; sourceTree = "<group>"; };
 		48C9EA6B2C870012008E9A76 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C9EA6E2C870012008E9A76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				48C9EA722C870012008E9A76 /* GameViewController.swift */,
+				4800C7DC2C93059B00BC0397 /* MenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48C9EA732C870012008E9A76 /* GameViewController.swift in Sources */,
+				4800C7DD2C93059B00BC0397 /* MenuViewController.swift in Sources */,
 				48C9EA862C872C60008E9A76 /* Player.swift in Sources */,
 				48C9EA6F2C870012008E9A76 /* AppDelegate.swift in Sources */,
 				48C9EA712C870012008E9A76 /* SceneDelegate.swift in Sources */,
