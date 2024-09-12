@@ -16,6 +16,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var playerOneLabel: UILabel!
     @IBOutlet weak var playerTwoLabel: UILabel!
     
+    var playerOneName: String?
+    var playerTwoName: String?
+    
     // Outlets - symbols
     @IBOutlet weak var xSymbol: UIImageView!
     @IBOutlet weak var circleSymbol: UIImageView!
@@ -43,6 +46,9 @@ class GameViewController: UIViewController {
         
         xSymbolPosition = xSymbol.center
         circleSymbolPosition = circleSymbol.center
+        
+        playerOneLabel.text = playerOneName ?? "Player 1"
+        playerTwoLabel.text = playerTwoName ?? "Player 2"
                 
         highlightPlayerTurn()
         
@@ -170,6 +176,7 @@ class GameViewController: UIViewController {
         }
         
         game.resetGame()
+        print(game.gameArray)
         game.currentPlayer = true
         
     }

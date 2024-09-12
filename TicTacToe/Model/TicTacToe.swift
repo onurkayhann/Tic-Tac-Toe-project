@@ -9,6 +9,17 @@ import Foundation
 
 class TicTacToe {
     
+    // var player: Player?
+    
+    private var players: [Player] = []
+    
+    func addPlayer(player: Player) {
+        players.append(player)
+        print("Player added: \(player.username)")
+        print("Current players: \(players.map { $0.username })")
+    }
+
+        
     // Array for game
     var gameArray: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     
@@ -41,6 +52,7 @@ class TicTacToe {
             gameArray[index] = currentPlayer ? PLAYER_ONE : PLAYER_TWO
             
             currentPlayer.toggle()
+                        
             
         }
         

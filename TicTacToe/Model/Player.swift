@@ -8,7 +8,7 @@
 import Foundation
 
 struct Player {
-    var id: Int
+    // var id: Int
     var username: String
-    var totalScore: Int = 0
+    // var totalScore: Int = 0
 }
