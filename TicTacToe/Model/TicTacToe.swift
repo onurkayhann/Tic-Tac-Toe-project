@@ -24,7 +24,6 @@ class TicTacToe {
         [2, 4, 6],
     ]
     
-    
     // Players
     var PLAYER_ONE = 1
     var PLAYER_TWO = 2
@@ -34,7 +33,6 @@ class TicTacToe {
     
     // Closure
     var onGameOver: ((String) -> Void)?
-    
     
     func startGame(at index: Int) {
         
@@ -49,7 +47,6 @@ class TicTacToe {
         checkWinner(gameArray: gameArray, combinations: winCombinations)
     }
     
-    
     func checkWinner(gameArray: [Int], combinations: [[Int]]){
         
         for combination in combinations {
@@ -57,9 +54,9 @@ class TicTacToe {
             let checkWin = combination.map { gameArray[$0] }
             print(checkWin)
             if checkWin.allSatisfy({ $0 == 1 }) {
-                onGameOver?("Player one wins")
+                onGameOver?("Player 1 wins")
             } else if checkWin.allSatisfy({ $0 == 2 }) {
-                onGameOver?("Player two wins")
+                onGameOver?("Player 2 wins")
             }
         }
         
@@ -71,9 +68,6 @@ class TicTacToe {
     func resetGame() {
         gameArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     }
-    
-    
-    
 }
 
 

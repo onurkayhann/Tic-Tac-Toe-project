@@ -24,9 +24,11 @@ class GameViewController: UIViewController {
     @IBOutlet weak var playerOneScore: UILabel!
     @IBOutlet weak var playerTwoScore: UILabel!
     
+    var valuePlayerOne = 0
+    var valuePlayerTwo = 0
+    
     // Instance of the game logic
     var game = TicTacToe()
-    
     
     var xSymbolPosition: CGPoint = CGPoint.zero
     var circleSymbolPosition: CGPoint = CGPoint.zero
@@ -53,11 +55,15 @@ class GameViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
+        if message.contains("Player 1 wins") {
+                valuePlayerOne += 1
+                playerOneScore.text = "Score: \(valuePlayerOne)"
+            } else if message.contains("Player 2 wins") {
+                valuePlayerTwo += 1
+                playerTwoScore.text = "Score: \(valuePlayerTwo)"
+            }
+        
         resetBoard()
-        // game.startgame(at: index) ?
-        
-        
-        
     }
     
     
