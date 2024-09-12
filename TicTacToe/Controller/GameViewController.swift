@@ -50,12 +50,14 @@ class GameViewController: UIViewController {
     
     func gameMessage(message: String) {
         let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
         resetBoard()
-        
         // game.startgame(at: index) ?
+        
+        
+        
     }
     
     
@@ -86,7 +88,6 @@ class GameViewController: UIViewController {
                     print(game.gameArray)
                     
                 }
-                
                 
                                 
             }
@@ -152,6 +153,7 @@ class GameViewController: UIViewController {
         }
         
         game.resetGame()
+        game.currentPlayer = true
         
     }
     
