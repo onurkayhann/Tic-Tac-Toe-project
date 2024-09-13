@@ -123,7 +123,6 @@ class GameViewController: UIViewController {
                 }
             }
             
-            // Reset symbol to its original position if no valid move
             symbol.center = originalPosition
         }
     }
@@ -208,6 +207,5 @@ class GameViewController: UIViewController {
  - navigation to WinnerViewController/LoserViewController or exit to MainMenuController
  - make score unique for each player
  - simulate computer moves
- - make onDragCircle and onDragX to a reusabel function
  - try to remove weak self, remove ? from self.
  */
