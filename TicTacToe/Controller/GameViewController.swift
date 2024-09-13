@@ -87,80 +87,45 @@ class GameViewController: UIViewController {
     
     // Actions
     @IBAction func onDragX(_ sender: UIPanGestureRecognizer) {
-        
-        let translation = sender.translation(in: self.view)
-        
-        xSymbol.center = CGPoint(x: translation.x + xSymbol.center.x, y: translation.y + xSymbol.center.y)
-        
-        sender.setTranslation(CGPoint.zero, in: self.view)
-        
-        if sender.state == .ended {
-                        
-            for (index, square) in squares.enumerated() {
-                
-                let squareFrameInSuperView = square.convert(square.bounds, to: self.view)
-                let xSymbolFrameInSuperView = xSymbol.convert(xSymbol.bounds, to: self.view)
-                
-                
-                if squareFrameInSuperView.contains(xSymbolFrameInSuperView) && game.currentPlayer && square.image != circleSymbol.image {
-                    square.image = UIImage(systemName: "xmark")
-                    square.tintColor = UIColor.greenCustom
-                                        
-                    game.startGame(at: index)
-                    highlightPlayerTurn()
-                    print(game.gameArray)
-                    
-                }
-                
-                                
-            }
-            
-            xSymbol.center = xSymbolPosition
-            
-        }
-        
-        
+        onDragSymbol(sender, symbol: xSymbol, systemName: "xmark", originalPosition: xSymbolPosition, opponentSymbolImage: circleSymbol.image, currentPlayer: true)
     }
     
     
-    
     @IBAction func onDragCircle(_ sender: UIPanGestureRecognizer) {
+        onDragSymbol(sender, symbol: circleSymbol, systemName: "circle", originalPosition: circleSymbolPosition, opponentSymbolImage: xSymbol.image, currentPlayer: false)
+    }
         
-        
+    
+    /**
+                reusable function to minimize the code, so that instead of having bunch of codes for X and Circle, they can use this function instead
+     */
+    func onDragSymbol(_ sender: UIPanGestureRecognizer, symbol: UIImageView, systemName: String, originalPosition: CGPoint, opponentSymbolImage: UIImage?, currentPlayer: Bool) {
         let translation = sender.translation(in: self.view)
         
-        circleSymbol.center = CGPoint(x: circleSymbol.center.x + translation.x, y: circleSymbol.center.y + translation.y)
+        symbol.center = CGPoint(x: symbol.center.x + translation.x, y: symbol.center.y + translation.y)
         
         sender.setTranslation(CGPoint.zero, in: self.view)
-                
         
         if sender.state == .ended {
-                        
+            
             for (index, square) in squares.enumerated() {
                 
-                
                 let squareFrameInSuperView = square.convert(square.bounds, to: self.view)
-                let circleSymbolFrameInSuperView = circleSymbol.convert(circleSymbol.bounds, to: self.view)
+                let symbolFrameInSuperView = symbol.convert(symbol.bounds, to: self.view)
                 
-                
-                if squareFrameInSuperView.contains(circleSymbolFrameInSuperView) && !game.currentPlayer && square.image != xSymbol.image {
-
-                    square.image = UIImage(systemName: "circle")
-                    square.tintColor = UIColor.grayCustom
+                if squareFrameInSuperView.contains(symbolFrameInSuperView) && square.image != opponentSymbolImage && game.currentPlayer == currentPlayer {
+                    square.image = UIImage(systemName: systemName)
+                    square.tintColor = (systemName == "xmark") ? UIColor.greenCustom : UIColor.grayCustom
                     
                     game.startGame(at: index)
                     highlightPlayerTurn()
                     print(game.gameArray)
-                    
                 }
-                
-
             }
             
-            circleSymbol.center = circleSymbolPosition
+            // Reset symbol to its original position if no valid move
+            symbol.center = originalPosition
         }
-        
-        
     }
     
     /**
