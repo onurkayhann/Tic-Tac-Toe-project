@@ -8,7 +8,7 @@
 import UIKit
 
 class ComputerViewController: UIViewController {
-
+    
     // Outlet Collection - squares
     @IBOutlet var squares: [UIImageView]!
     
@@ -36,7 +36,7 @@ class ComputerViewController: UIViewController {
     var xSymbolPosition: CGPoint = CGPoint.zero
     var circleSymbolPosition: CGPoint = CGPoint.zero
     
-    // Navigation variables
+    // Navigation variable
     var segueToMainMenu = "segueToMainMenu"
     
     
@@ -49,14 +49,12 @@ class ComputerViewController: UIViewController {
         
         playerOneLabel.text = playerOneName ?? "Player 1"
         playerTwoLabel.text = computerName ?? "Computer"
-                
+        
         highlightPlayerTurn()
         
         game.onGameOver = { [weak self] resultMessage in
             self?.gameMessage(message: resultMessage)
         }
-        
-        
     }
     
     func gameMessage(message: String) {
@@ -88,13 +86,8 @@ class ComputerViewController: UIViewController {
         onDragSymbol(sender, symbol: xSymbol, systemName: "xmark", originalPosition: xSymbolPosition, opponentSymbolImage: circleSymbol.image, currentPlayer: true)
     }
     
-    
-    @IBAction func onDragCircle(_ sender: UIPanGestureRecognizer) {
-        onDragSymbol(sender, symbol: circleSymbol, systemName: "circle", originalPosition: circleSymbolPosition, opponentSymbolImage: xSymbol.image, currentPlayer: false)
-    }
-    
     /**
-                reusable function to minimize the code, so that instead of having bunch of codes for X and Circle, they can use this function instead
+     reusable function to minimize the code, so that instead of having bunch of codes for X and Circle, they can use this function instead
      */
     func onDragSymbol(_ sender: UIPanGestureRecognizer, symbol: UIImageView, systemName: String, originalPosition: CGPoint, opponentSymbolImage: UIImage?, currentPlayer: Bool) {
         let translation = sender.translation(in: self.view)
@@ -117,6 +110,12 @@ class ComputerViewController: UIViewController {
                     game.startGame(at: index)
                     highlightPlayerTurn()
                     print(game.gameArray)
+                    
+                    game.currentPlayer = false
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
+                        self.computerChoice()
+                    }
                 }
             }
             
@@ -124,8 +123,31 @@ class ComputerViewController: UIViewController {
         }
     }
     
+    func computerChoice() {
+        
+        print("Computer's turn")
+        
+        let emptySquares = squares.filter { $0.image == UIImage(systemName: "square") }
+        
+        if let computerChoice = emptySquares.randomElement(), let index = squares.firstIndex(of: computerChoice) {
+            
+            computerChoice.image = UIImage(systemName: "circle")
+            computerChoice.tintColor = UIColor.grayCustom
+            
+            game.currentPlayer = false
+            
+            game.startGame(at: index)
+            
+            highlightPlayerTurn()
+            
+            game.currentPlayer = true
+            
+            print(game.gameArray)
+        }
+    }
+    
     /**
-            Function to reset board to its default value --> squares
+     Function to reset board to its default value --> squares
      */
     func resetBoard() {
         
@@ -143,7 +165,7 @@ class ComputerViewController: UIViewController {
     }
     
     /**
-            This function will outgray the disabled player, for the view purpose. This function will also highlight current player by blinking animation
+     This function will outgray the disabled player, for the view purpose. This function will also highlight current player by blinking animation
      */
     func highlightPlayerTurn() {
         // Adding the delay before executing the main logic
@@ -167,8 +189,8 @@ class ComputerViewController: UIViewController {
                                delay: 0.0,
                                options: [.repeat, .autoreverse],
                                animations: {
-                                   self.playerOneLabel.alpha = 0
-                               }, completion: nil)
+                    self.playerOneLabel.alpha = 0
+                }, completion: nil)
                 
             } else {
                 
@@ -189,12 +211,9 @@ class ComputerViewController: UIViewController {
                                delay: 0.0,
                                options: [.repeat, .autoreverse],
                                animations: {
-                                   self.playerTwoLabel.alpha = 0
-                               }, completion: nil)
+                    self.playerTwoLabel.alpha = 0
+                }, completion: nil)
             }
         }
     }
- 
-    
-    
 }

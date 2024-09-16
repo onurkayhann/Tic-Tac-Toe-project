@@ -201,8 +201,11 @@ class GameViewController: UIViewController {
 
 /*
  MARK: TODOS!!
- - navigation to WinnerViewController/LoserViewController or exit to MainMenuController
  - make score unique for each player
- - simulate computer moves
  - try to remove weak self, remove ? from self.
+ - remove comments
+ - remove unnecessary code
+ - make code simplified
+ - try to print computer instead of player 2
+ - print whose turn it is
  */
