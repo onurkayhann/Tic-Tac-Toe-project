@@ -83,8 +83,6 @@ class GameViewController: UIViewController {
         }
     }
     
-    
-    
     // Actions
     @IBAction func onDragX(_ sender: UIPanGestureRecognizer) {
         onDragSymbol(sender, symbol: xSymbol, systemName: "xmark", originalPosition: xSymbolPosition, opponentSymbolImage: circleSymbol.image, currentPlayer: true)
@@ -94,7 +92,6 @@ class GameViewController: UIViewController {
     @IBAction func onDragCircle(_ sender: UIPanGestureRecognizer) {
         onDragSymbol(sender, symbol: circleSymbol, systemName: "circle", originalPosition: circleSymbolPosition, opponentSymbolImage: xSymbol.image, currentPlayer: false)
     }
-        
     
     /**
                 reusable function to minimize the code, so that instead of having bunch of codes for X and Circle, they can use this function instead
