@@ -191,7 +191,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="213" y="-2"/>
+            <point key="canvasLocation" x="1407" y="-2"/>
         </scene>
         <!--Computer View Controller-->
         <scene sceneID="dth-pM-h5e">
@@ -376,7 +376,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1163" y="773"/>
+            <point key="canvasLocation" x="1407" y="725"/>
         </scene>
         <!--Register Player View Controller-->
         <scene sceneID="rIC-jg-oIL">
@@ -473,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MVg-pK-xdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105" y="-5"/>
+            <point key="canvasLocation" x="576" y="-2"/>
         </scene>
         <!--Register Computer View Controller-->
         <scene sceneID="nvB-hX-Fmr">
@@ -570,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdQ-M2-8aO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="213" y="773"/>
+            <point key="canvasLocation" x="575" y="725"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="xjb-jI-PG8">
@@ -654,7 +654,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zMq-k6-Rjv"/>
+        <segue reference="g8Y-kB-Ywh"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circle" catalog="system" width="128" height="123"/>

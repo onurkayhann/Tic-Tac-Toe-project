@@ -33,6 +33,7 @@ class GameViewController: UIViewController {
     // Instance of the game logic
     var game = TicTacToe()
     
+    
     var xSymbolPosition: CGPoint = CGPoint.zero
     var circleSymbolPosition: CGPoint = CGPoint.zero
     
@@ -43,6 +44,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        game.isAgainstComputer = false
         
         xSymbolPosition = xSymbol.center
         circleSymbolPosition = circleSymbol.center

@@ -8,9 +8,7 @@
 import Foundation
 
 class TicTacToe {
-    
-    // var player: Player?
-    
+        
     private var players: [Player] = []
     
     func addPlayer(player: Player) {
@@ -42,6 +40,8 @@ class TicTacToe {
     // Player state
     var currentPlayer = true
     
+    var isAgainstComputer = false
+    
     // Closure
     var onGameOver: ((String) -> Void)?
     
@@ -67,8 +67,9 @@ class TicTacToe {
             print(checkWin)
             if checkWin.allSatisfy({ $0 == 1 }) {
                 onGameOver?("Player 1 wins")
-            } else if checkWin.allSatisfy({ $0 == 2 }) {
-                onGameOver?("Player 2 wins")
+            } else if checkWin.allSatisfy({ $0 == PLAYER_TWO }) {
+                let winner = isAgainstComputer ? "Computer wins" : "Player 2 wins"
+                onGameOver?(winner)
             }
         }
         

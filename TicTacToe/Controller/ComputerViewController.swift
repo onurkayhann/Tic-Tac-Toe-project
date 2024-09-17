@@ -44,6 +44,8 @@ class ComputerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        game.isAgainstComputer = true
+        
         xSymbolPosition = xSymbol.center
         circleSymbolPosition = circleSymbol.center
         
@@ -58,7 +60,11 @@ class ComputerViewController: UIViewController {
     }
     
     func gameMessage(message: String) {
-        // Create the alert
+        var resultMessage = message
+            if game.isAgainstComputer && message.contains("Player 2 wins") {
+                resultMessage = "Computer wins" 
+            }
+        
         let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: { action in
