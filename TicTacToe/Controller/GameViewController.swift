@@ -208,4 +208,5 @@ class GameViewController: UIViewController {
  - make code simplified
  - try to print computer instead of player 2, and do player 3/computer
  - print whose turn it is
+ - make UI better
  */
