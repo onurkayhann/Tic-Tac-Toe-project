@@ -59,7 +59,7 @@ class TicTacToe {
         return checkWinner(gameArray: gameArray, combinations: winCombinations)
     }
     
-    func checkWinner(gameArray: [Int], combinations: [[Int]]) -> Bool?{
+    func checkWinner(gameArray: [Int], combinations: [[Int]]) -> Bool? {
         
         for combination in combinations {
             print(combination)
@@ -77,8 +77,9 @@ class TicTacToe {
         
         if (!gameArray.contains(0)) {
             onGameOver?("It's a tie")
-            return false
+            return true
         }
+        
         return false
     }
         
