@@ -114,7 +114,7 @@ class ComputerViewController: UIViewController {
                     game.currentPlayer = false
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
-                        self.computerChoice()
+                        self.onDragComputer()
                     }
                 }
             }
@@ -123,7 +123,7 @@ class ComputerViewController: UIViewController {
         }
     }
     
-    func computerChoice() {
+    func onDragComputer() {
         
         print("Computer's turn")
         
