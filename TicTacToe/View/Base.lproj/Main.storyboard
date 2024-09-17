@@ -448,7 +448,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13T-0O-3AF">
                                         <rect key="frame" x="0.0" y="432" width="250" height="34.333333333333314"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Submit">
+                                        <buttonConfiguration key="configuration" style="filled" title="Play Game">
                                             <color key="baseBackgroundColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -545,7 +545,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELh-eF-sWS">
                                         <rect key="frame" x="0.0" y="432" width="250" height="34.333333333333314"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Submit">
+                                        <buttonConfiguration key="configuration" style="filled" title="Play Game">
                                             <color key="baseBackgroundColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
