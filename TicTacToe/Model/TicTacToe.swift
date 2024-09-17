@@ -56,16 +56,15 @@ class TicTacToe {
             
         }
         
-        return checkWinner(gameArray: gameArray, combinations: winCombinations)
+        return checkWinner(gameArray: gameArray, winCombinations: winCombinations)
     }
     
-    func checkWinner(gameArray: [Int], combinations: [[Int]]) -> Bool? {
+    /** function that loops throguh gameArray and winCombinations and decides winner or tie */
+    func checkWinner(gameArray: [Int], winCombinations: [[Int]]) -> Bool? {
         
-        for combination in combinations {
-            print(combination)
-            let checkWin = combination.map { gameArray[$0] }
-            print(checkWin)
-            if checkWin.allSatisfy({ $0 == 1 }) {
+        for winCombination in winCombinations {
+            let checkWin = winCombination.map { gameArray[$0] }
+            if checkWin.allSatisfy({ $0 == PLAYER_ONE }) {
                 onGameOver?("Player 1 wins")
                 return true
             } else if checkWin.allSatisfy({ $0 == PLAYER_TWO }) {
@@ -87,9 +86,3 @@ class TicTacToe {
         gameArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     }
 }
-
-
-/*
- - mayb remove ? from onGameOver as well
- - dictionary for username and highscore to print it in the highscore page
- */

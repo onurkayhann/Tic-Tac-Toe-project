@@ -201,16 +201,3 @@ class GameViewController: UIViewController {
     
     
 }
-
-/*
- MARK: TODOS!!
- - make score unique for each player
- - add comments into the function using /** */
- - try to remove weak self, remove ? from self.
- - remove comments
- - remove unnecessary code
- - make code simplified
- - print whose turn it is
- - make UI better:
-   - make everything centered in playerStacks
- */

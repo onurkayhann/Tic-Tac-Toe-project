@@ -61,7 +61,6 @@ class ComputerViewController: UIViewController {
     
     func gameMessage(message: String) {
         var resultMessage = message
-        print("gameMessage func is running: \(message)")
             if game.isAgainstComputer && message.contains("Player 2 wins") {
                 resultMessage = "Computer wins"
             }
@@ -121,7 +120,7 @@ class ComputerViewController: UIViewController {
                     game.currentPlayer = false
                     
                     if !hasWinner {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
                             self.onDragComputer()
                         }
                     }
@@ -132,10 +131,8 @@ class ComputerViewController: UIViewController {
         }
     }
     
+    /** function that simulates computers next move */
     func onDragComputer() {
-        
-        print("Computer's turn")
-        
         let emptySquares = squares.filter { $0.image == UIImage(systemName: "square") }
         
         if let computerChoice = emptySquares.randomElement(), let index = squares.firstIndex(of: computerChoice) {
