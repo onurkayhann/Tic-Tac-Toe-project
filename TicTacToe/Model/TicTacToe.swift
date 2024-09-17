@@ -45,7 +45,7 @@ class TicTacToe {
     // Closure
     var onGameOver: ((String) -> Void)?
     
-    func startGame(at index: Int) {
+    func startGame(at index: Int) -> Bool? {
         
         if gameArray[index] == 0 {
             
@@ -56,10 +56,10 @@ class TicTacToe {
             
         }
         
-        checkWinner(gameArray: gameArray, combinations: winCombinations)
+        return checkWinner(gameArray: gameArray, combinations: winCombinations)
     }
     
-    func checkWinner(gameArray: [Int], combinations: [[Int]]){
+    func checkWinner(gameArray: [Int], combinations: [[Int]]) -> Bool?{
         
         for combination in combinations {
             print(combination)
@@ -67,15 +67,19 @@ class TicTacToe {
             print(checkWin)
             if checkWin.allSatisfy({ $0 == 1 }) {
                 onGameOver?("Player 1 wins")
+                return true
             } else if checkWin.allSatisfy({ $0 == PLAYER_TWO }) {
                 let winner = isAgainstComputer ? "Computer wins" : "Player 2 wins"
                 onGameOver?(winner)
+                return true
             }
         }
         
         if (!gameArray.contains(0)) {
             onGameOver?("It's a tie")
+            return false
         }
+        return false
     }
         
     func resetGame() {

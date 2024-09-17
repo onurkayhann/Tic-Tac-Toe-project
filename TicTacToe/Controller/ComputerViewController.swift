@@ -27,7 +27,7 @@ class ComputerViewController: UIViewController {
     @IBOutlet weak var playerOneScore: UILabel!
     @IBOutlet weak var playerTwoScore: UILabel!
     
-    var valuePlayerOne = 0
+    var valuePlayer = 0
     var valuePlayerTwo = 0
     
     // Instance of the game logic
@@ -61,8 +61,9 @@ class ComputerViewController: UIViewController {
     
     func gameMessage(message: String) {
         var resultMessage = message
+        print("gameMessage func is running: \(message)")
             if game.isAgainstComputer && message.contains("Player 2 wins") {
-                resultMessage = "Computer wins" 
+                resultMessage = "Computer wins"
             }
         
         let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
@@ -79,9 +80,9 @@ class ComputerViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         
         if message.contains("Player 1 wins") {
-            valuePlayerOne += 1
-            playerOneScore.text = "Score: \(valuePlayerOne)"
-        } else if message.contains("Player 2 wins") {
+            valuePlayer += 1
+            playerOneScore.text = "Score: \(valuePlayer)"
+        } else if message.contains("Computer wins") {
             valuePlayerTwo += 1
             playerTwoScore.text = "Score: \(valuePlayerTwo)"
         }
@@ -113,14 +114,16 @@ class ComputerViewController: UIViewController {
                     square.image = UIImage(systemName: systemName)
                     square.tintColor = (systemName == "xmark") ? UIColor.greenCustom : UIColor.grayCustom
                     
-                    game.startGame(at: index)
+                    let hasWinner = game.startGame(at: index)!
                     highlightPlayerTurn()
                     print(game.gameArray)
                     
                     game.currentPlayer = false
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
-                        self.onDragComputer()
+                    if !hasWinner {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
+                            self.onDragComputer()
+                        }
                     }
                 }
             }
