@@ -22,7 +22,7 @@ class RegisterComputerViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         computerNameTextField.text = "Computer"
-        computerNameTextField.isUserInteractionEnabled = false
+        // computerNameTextField.isUserInteractionEnabled = false
     }
     
 

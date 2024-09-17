@@ -17,23 +17,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5sY-lh-edT" userLabel="playerTwoStack">
-                                <rect key="frame" x="149" y="688" width="95" height="149"/>
+                                <rect key="frame" x="149" y="695" width="79" height="142"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUl-cM-oBF">
-                                        <rect key="frame" x="0.0" y="0.0" width="95" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwj-Xh-MFB" userLabel="playerTwo">
-                                        <rect key="frame" x="0.0" y="34" width="95" height="30"/>
+                                        <rect key="frame" x="0.0" y="34" width="79" height="23"/>
                                         <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <color key="textColor" red="0.45098042490000001" green="0.50196081400000003" blue="0.55686277149999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="P4c-QF-6Tf">
-                                        <rect key="frame" x="0.0" y="75" width="95" height="73.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="68" width="79" height="73.666666666666686"/>
                                         <color key="tintColor" red="0.45098042490000001" green="0.50196081400000003" blue="0.55686277149999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -45,12 +45,15 @@
                                         </connections>
                                     </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="hLl-fP-BTT"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vY2-2I-PsJ" userLabel="playerOneStack">
-                                <rect key="frame" x="149.33333333333334" y="25" width="94.333333333333343" height="150.33333333333334"/>
+                                <rect key="frame" x="149.33333333333334" y="25" width="78.333333333333343" height="142"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Zuh-yo-Mrh">
-                                        <rect key="frame" x="0.0" y="2.6666666666666643" width="94.333333333333329" height="70"/>
+                                        <rect key="frame" x="0.0" y="2.6666666666666643" width="78.333333333333329" height="70"/>
                                         <color key="tintColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -62,22 +65,25 @@
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60J-Vg-ULF" userLabel="playerOne">
-                                        <rect key="frame" x="0.0" y="85" width="94.333333333333329" height="31.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="85" width="78.333333333333329" height="23"/>
                                         <color key="tintColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <color key="textColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJF-k0-1sz">
-                                        <rect key="frame" x="0.0" y="126.33333333333334" width="94.333333333333329" height="24"/>
+                                        <rect key="frame" x="0.0" y="118" width="78.333333333333329" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="XdR-zC-2fa"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kn6-Q5-C7P" userLabel="parentStack">
-                                <rect key="frame" x="39" y="268.66666666666669" width="315" height="315.00000000000006"/>
+                                <rect key="frame" x="31" y="268.66666666666669" width="315" height="315.00000000000006"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wQB-TC-MhZ" userLabel="childrenStack">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="105"/>
@@ -202,23 +208,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="X12-i7-Vvy" userLabel="playerTwoStack">
-                                <rect key="frame" x="149" y="688" width="95" height="149"/>
+                                <rect key="frame" x="149" y="695" width="79" height="142"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiX-yO-6l2">
-                                        <rect key="frame" x="0.0" y="0.0" width="95" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geU-OZ-fUi" userLabel="playerTwo">
-                                        <rect key="frame" x="0.0" y="34" width="95" height="30"/>
+                                        <rect key="frame" x="0.0" y="34" width="79" height="23"/>
                                         <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <color key="textColor" red="0.45098042490000001" green="0.50196081400000003" blue="0.55686277149999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KUg-Lv-Msr">
-                                        <rect key="frame" x="0.0" y="75" width="95" height="73.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="68" width="79" height="73.666666666666686"/>
                                         <color key="tintColor" red="0.45098042490000001" green="0.50196081400000003" blue="0.55686277149999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -230,12 +236,15 @@
                                         </connections>
                                     </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="oTw-Be-tli"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QUk-o8-yXL" userLabel="playerOneStack">
-                                <rect key="frame" x="149.33333333333334" y="25" width="94.333333333333343" height="150.33333333333334"/>
+                                <rect key="frame" x="149.33333333333334" y="25" width="78.333333333333343" height="142"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8QQ-7q-aeR">
-                                        <rect key="frame" x="0.0" y="2.6666666666666643" width="94.333333333333329" height="70"/>
+                                        <rect key="frame" x="0.0" y="2.6666666666666643" width="78.333333333333329" height="70"/>
                                         <color key="tintColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -247,22 +256,25 @@
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQq-FP-58m" userLabel="playerOne">
-                                        <rect key="frame" x="0.0" y="85" width="94.333333333333329" height="31.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="85" width="78.333333333333329" height="23"/>
                                         <color key="tintColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <color key="textColor" red="0.11457045809999999" green="0.4580176768" blue="0.3947466335" alpha="0.79873758279999996" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-F8-R3V">
-                                        <rect key="frame" x="0.0" y="126.33333333333334" width="94.333333333333329" height="24"/>
+                                        <rect key="frame" x="0.0" y="118" width="78.333333333333329" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="Upw-M9-yIu"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ist-cI-Hab" userLabel="parentStack">
-                                <rect key="frame" x="39" y="268.66666666666669" width="315" height="315.00000000000006"/>
+                                <rect key="frame" x="31" y="268.66666666666669" width="315" height="315.00000000000006"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3zJ-US-ohw" userLabel="childrenStack">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="105"/>
@@ -654,7 +666,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g8Y-kB-Ywh"/>
+        <segue reference="zMq-k6-Rjv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circle" catalog="system" width="128" height="123"/>

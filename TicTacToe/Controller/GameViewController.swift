@@ -209,7 +209,7 @@ class GameViewController: UIViewController {
  - remove comments
  - remove unnecessary code
  - make code simplified
- - try to print computer instead of player 2, and do player 3/computer
  - print whose turn it is
- - make UI better
+ - make UI better:
+   - make everything centered in playerStacks
  */
